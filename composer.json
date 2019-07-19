@@ -1,5 +1,5 @@
 {
-  "name": "wirecard/shopware-ee",
+  "name": "miha1/shopware-ee",
   "description": "Shopware plugin for Wirecard Payment Processing Gateway",
   "license": "GPL-3.0-only",
   "minimum-stability": "beta",
@@ -18,6 +18,11 @@
     "symfony/yaml": "^3"
   },
   "type": "shopware-plugin",
+  "autoload": {
+    "psr-4": {
+      "WirecardElasticEngine\\": "/"
+    }
+  },
   "scripts": {
     "make-readme-badge": "@php .bin/version-helper.php -r",
     "make-wiki-notes": "@php .bin/version-helper.php -w",
@@ -29,5 +34,8 @@
     "js-fix": "eslint -c .eslintrc.json **/*.js **/*.js --ignore-path .eslintignore --fix",
     "test-coverage": "phpunit --colors=always --coverage-clover build/coverage.xml",
     "build-languages": "php .bin/language-helper.php"
+  },
+  "extra": {
+    "installer-name": "WirecardElasticEngine"
   }
 }
